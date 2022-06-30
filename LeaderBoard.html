@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src=https://ajax.aspnetcdn.com/ajax/jquery-2.1.1.js></script>
+</head>
+    <body onload=InitLeaderBoard()>
+        <script>
+                    function InitLeaderBoard() {
+                        var urlPrefix = "";
+                        var url = urlPrefix + secret;
+                        $.ajax({
+                            url: url,
+                            dataType: "json",
+                            async: true,
+                            data: {},
+                            type: "GET",
+                            xhrFields: {
+                                withCredentials: true
+                            },
+                            success: function(data) {
+                                console.log("SUCCESS");
+                                console.log(data);
+                                $.each(data, function(o) {
+                                    $([Players[0].GivenName]).html(o.GivenName1);
+                                    $([Players[0].SurName]).html(o.SurName1);
+                                    $([Players[0].Division]).html(o.Division1);
+                                    $([Players[0].TotalPointsRaw]).html(o.TotalPointsRaw1);
+                                    $([Players[0].TotalPointsAdjusted]).html(o.TotalPointsAdjusted1);  /// 1
+                                    $([Players[0].TotalFramesRaw]).html(o.TotalFramesRaw1);
+                                    $([Players[0].TotalFramesAdjusted]).html(o.TotalFramesAdjusted1);
+                                    $([Players[0].TotalPA]).html(o.TotalPA1);
+                                    $([Players[0].RoundPA]).html(o.RoundPA1);
+                                        $([Players[1].GivenName]).html(o.GivenName2);
+                                        $([Players[1].SurName]).html(o.SurName2);
+                                        $([Players[1].Division]).html(o.Division2);
+                                        $([Players[1].TotalPointsRaw]).html(o.TotalPointsRaw2);
+                                        $([Players[1].TotalPointsAdjusted]).html(o.TotalPointsAdjusted2);   /// 2
+                                        $([Players[1].TotalFramesRaw]).html(o.TotalFramesRaw2);
+                                        $([Players[1].TotalFramesAdjusted]).html(o.TotalFramesAdjusted2);
+                                        $([Players[1].TotalPA]).html(o.TotalPA2);
+                                        $([Players[1].RoundPA]).html(o.RoundPA2);
+                                            $([Players[2].GivenName]).html(o.GivenName3);
+                                            $([Players[2].SurName]).html(o.SurName3);
+                                            $([Players[2].Division]).html(o.Division3);
+                                            $([Players[2].TotalPointsRaw]).html(o.TotalPointsRaw3);
+                                            $([Players[2].TotalPointsAdjusted]).html(o.TotalPointsAdjusted3);   ///                                            $([Players.TotalFramesRaw]).html(o.TotalFramesRaw3);
+                                            $([Players[2].TotalFramesAdjusted]).html(o.TotalFramesAdjusted3);
+                                            $([Players[2].TotalPA]).html(o.TotalPA3);
+                                            $([Players[2].RoundPA]).html(o.RoundPA3);
+                                                $([Players[3].GivenName]).html(o.GivenName4);
+                                                $([Players[3].SurName]).html(o.SurName4);
+                                                $([Players[3].Division]).html(o.Division4);
+                                                $([Players[3].TotalPointsRaw]).html(o.TotalPointsRaw4);
+                                                $([Players[3].TotalPointsAdjusted]).html(o.TotalPointsAdjusted4);   /// 4
+                                                $([Players[3].TotalFramesRaw]).html(o.TotalFramesRaw4);
+                                                $([Players[3].TotalFramesAdjusted]).html(o.TotalFramesAdjusted4);
+                                                $([Players[3].TotalPA]).html(o.TotalPA4);
+                                                $([Players[3].RoundPA]).html(o.RoundPA4);
+                                                    $([Players[4].GivenName]).html(o.GivenName5);
+                                                    $([Players[4].SurName]).html(o.SurName5);
+                                                    $([Players[4].Division]).html(o.Division5);
+                                                    $([Players[4].TotalPointsRaw]).html(o.TotalPointsRaw5);
+                                                    $([Players[4].TotalPointsAdjusted]).html(o.TotalPointsAdjusted5);   /// 5
+                                                    $([Players[4].TotalFramesRaw]).html(o.TotalFramesRaw5);
+                                                    $([Players[4].TotalFramesAdjusted]).html(o.TotalFramesAdjusted5);
+                                                    $([Players[4].TotalPA]).html(o.TotalPA5);
+                                                    $([Players[4].RoundPA]).html(o.RoundPA5);
+                                                        $([Players[5].GivenName]).html(o.GivenName6);
+                                                        $([Players[5].SurName]).html(o.SurName6);
+                                                        $([Players[5].Division]).html(o.Division6);
+                                                        $([Players[5].TotalPointsRaw]).html(o.TotalPointsRaw6);
+                                                        $([Players[5].TotalPointsAdjusted]).html(o.TotalPointsAdjusted6);   /// 6
+                                                        $([Players[5].TotalFramesAdjusted]).html(o.TotalFramesAdjusted6);
+                                                        $([Players[5].TotalPA]).html(o.TotalPA6);
+                                                        $([Players[5].RoundPA]).html(o.RoundPA6);
+                                                            $([Players[6].GivenName]).html(o.GivenName7);
+                                                            $([Players[6].SurName]).html(o.SurName7);
+                                                            $([Players[6].Division]).html(o.Division7);
+                                                            $([Players[6].TotalPointsRaw]).html(o.TotalPointsRaw7);
+                                                            $([Players[6].TotalPointsAdjusted]).html(o.TotalPointsAdjusted7);   /// 7
+                                                            $([Players[6].TotalFramesRaw]).html(o.TotalFramesRaw7);
+                                                            $([Players[6].TotalFramesAdjusted]).html(o.TotalFramesAdjusted7);
+                                                            $([Players[6].TotalPA]).html(o.TotalPA7);
+                                                            $([Players[6].RoundPA]).html(o.RoundPA7);
+                                                                $([Players[7].GivenName]).html(o.GivenName8);
+                                                                $([Players[7].SurName]).html(o.SurName8);
+                                                                $([Players[7].Division]).html(o.Division8);
+                                                                $([Players[7].TotalPointsRaw]).html(o.TotalPointsRaw8);
+                                                                $([Players[7].TotalPointsAdjusted]).html(o.TotalPointsAdjusted8);   /// 8
+                                                                $([Players[7].TotalFramesRaw]).html(o.TotalFramesRaw8);
+                                                                $([Players[7].TotalFramesAdjusted]).html(o.TotalFramesAdjusted8);
+                                                                $([Players[7].TotalPA]).html(o.TotalPA8);
+                                                                $([Players[7].RoundPA]).html(o.RoundPA8);
+                                })
+                            },
+                            error: function(err) {
+                               console.log("ERROR");
+                               console.log(err);
+                            },
+                        });
+                    };
+        </script>
+        <div id="LeaderBoardBox">
+            <div class="L1">
+                <div class="GivenName1"></div>
+                <div class="Surname1"></div>
+                <div class="Division1"></div>
+                <div class="TotalPointsRaw1"></div>
+                <div class="TotalPointsAdjusted1"></div>
+                <div class="TotalFramesRaw1"></div>
+                <div class="TotalFramesAdjusted1"></div>
+                <div class="TotalPA1"></div>
+                <div class="RoundPA1"></div>
+            </div>
+            <div class="L2">
+                <div class="GivenName2"></div>
+                <div class="Surname2"></div>
+                <div class="Division2"></div>
+                <div class="TotalPointsRaw2"></div>
+                <div class="TotalPointsAdjusted2"></div>
+                <div class="TotalFramesRaw2"></div>
+                <div class="TotalFramesAdjusted2"></div>
+                <div class="TotalPA2"></div>
+                <div class="RoundPA2"></div>
+            </div>
+            <div class="L3">
+                <div class="GivenName3"></div>
+                <div class="Surname3"></div>
+                <div class="Division3"></div>
+                <div class="TotalPointsRaw3"></div>
+                <div class="TotalPointsAdjusted3"></div>
+                <div class="TotalFramesRaw3"></div>
+                <div class="TotalFramesAdjusted3"></div>
+                <div class="TotalPA3"></div>
+                <div class="RoundPA3"></div>
+            </div>
+            <div class="L4">
+                <div class="GivenName4"></div>
+                <div class="Surname4"></div>
+                <div class="Division4"></div>
+                <div class="TotalPointsRaw4"></div>
+                <div class="TotalPointsAdjusted4"></div>
+                <div class="TotalFramesRaw4"></div>
+                <div class="TotalFramesAdjusted4"></div>
+                <div class="TotalPA4"></div>
+                <div class="RoundPA4"></div>
+            </div>
+            <div class="L5">
+                <div class="GivenName5"></div>
+                <div class="Surname5"></div>
+                <div class="Division5"></div>
+                <div class="TotalPointsRaw5"></div>
+                <div class="TotalPointsAdjusted5"></div>
+                <div class="TotalFramesRaw5"></div>
+                <div class="TotalFramesAdjusted5"></div>
+                <div class="TotalPA5"></div>
+                <div class="RoundPA5"></div>
+            </div>
+            <div class="L6">
+                <div class="GivenName6"></div>
+                <div class="Surname6"></div>
+                <div class="Division6"></div>
+                <div class="TotalPointsRaw6"></div>
+                <div class="TotalPointsAdjusted6"></div>
+                <div class="TotalFramesRaw6"></div>
+                <div class="TotalFramesAdjusted6"></div>
+                <div class="TotalPA6"></div>
+                <div class="RoundPA6"></div>
+            </div>
+            <div class="L7">
+                <div class="GivenName7"></div>
+                <div class="Surname7"></div>
+                <div class="Division7"></div>
+                <div class="TotalPointsRaw7"></div>
+                <div class="TotalPointsAdjusted7"></div>
+                <div class="TotalFramesRaw7"></div>
+                <div class="TotalFramesAdjusted7"></div>
+                <div class="TotalPA7"></div>
+                <div class="RoundPA7"></div>
+            </div>
+            <div class="L8">
+                <div class="GivenName8"></div>
+                <div class="Surname8"></div>
+                <div class="Division8"></div>
+                <div class="TotalPointsRaw8"></div>
+                <div class="TotalPointsAdjusted8"></div>
+                <div class="TotalFramesRaw8"></div>
+                <div class="TotalFramesAdjusted8"></div>
+                <div class="TotalPA8"></div>
+                <div class="RoundPA8"></div>
+            </div>
+        </div>
+    </body>
+</html>
